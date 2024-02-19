@@ -1,0 +1,57 @@
+@import "_base_variables";
+@import "_base_reset";
+@import "_base_my_reset";
+
+
+// 載入 vendors 
+@import "vendors_bootstrap-grid";
+@import "vendors_simplebar";
+@import "vendors_perfactScrollbar";
+
+// 載入基礎設定
+@import "_base_globe_setting";
+@import "_base_typography";
+@import "_base_btn";
+@import "_base_inputStyle";
+// @import "_base_forms"; 後來新加的 可以不需要
+
+// 載入元件設定
+@import "component_header";
+@import "component_main_nav";
+@import "component_sub_nav";
+@import "component_infoBar";
+@import "component_main_content";
+@import "component_carousel";
+@import "component_echart";
+@import "component_filter";
+@import "component_popup";
+
+@import "./component-cards/component_card";//慢慢統整到此scss
+
+// 載入卡片元件設定
+@import "./component-cards/component-card-type-normal";
+@import "./component-cards/component-card-type-with-icon";
+@import "./component-cards/component-card-type-chart";
+@import "./component-cards/component-card-type-list-col";
+@import "./component-cards/component-card-type-table-list";
+// @import "./component-cards/component-card-type-calender";
+// @import "./component-cards/component-card-type-inputFiled.scss";
+// @import "./component-cards/component-card-type-list-2col";
+// @import "./component-cards/component-card-type-list-3col";
+// @import "./component-cards/component-card-type-list-4col";
+// @import "./component-cards/component-card-type-list-5col";
+// @import "./component-cards/component-card-type-list-6col";
+// @import "./component-cards/component-card-type-list-7col";
+// @import "./component-cards/component-card-type-list-8col";
+// @import "./component-cards/component-card-type-list-9col";
+
+
+// 載入頁面設定
+@import "layout_index";
+@import "layout_setting_greenhouse";
+
+
+// 載入通用設定
+@import "helper_spacing";
+@import "helper_height";
+@import "helper_google-icon";

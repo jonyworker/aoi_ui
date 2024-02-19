@@ -1,0 +1,102 @@
+
+/*/////////////////////////////
+===== Globe Setting START =====
+/////////////////////////////*/
+* {
+	// outline: 1px solid #5a7;
+}
+
+.main-info-section {
+	padding-top: 72px;
+	flex: 1;
+	height: 100vh;
+	background-color: $color-grey-30;
+	display: flex;
+	flex-direction: column;
+} 
+.title {
+	font-size: 40px;
+	line-height: 117%;
+	font-weight: bold;
+	color: $text-color-87;
+}
+
+.subtitle {
+	font-size: 16px;
+	line-height: 137%;
+	font-weight: normal;
+	color: $text-color-87;
+}
+
+// 顏色 (暫時放這)
+.color-primary-default {
+	color: $color-primary-default;
+}
+.color-primary-dark {
+	color: $color-primary-dark;
+}
+.color-primary-light {
+	color: $color-primary-light;
+}
+
+.text-color-100 {
+	color: $text-color-100;
+}
+.text-color-87 {
+	color: $text-color-87;
+}
+.text-color-60 {
+	color: $text-color-60;
+}
+.text-color-38 {
+	color: $text-color-38;
+}
+.text-color-0 {
+	color: $text-color-0;
+}
+
+// scroll-bar (暫時放這)
+.scroll-bar::-webkit-scrollbar-track {
+	background-color: white;
+}
+
+.scroll-bar::-webkit-scrollbar {
+	width: 3px;
+	background-color: #F5F5F5;
+	display: none;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	border: 2px solid white;
+	/* should match background, can't be transparent */
+	background-color: rgba(0, 0, 0, .5);
+}
+.scroll-bar:hover::-webkit-scrollbar {
+	display: block;
+}
+.scroll-bar::-webkit-scrollbar:vertical {
+	width: 11px;
+}
+
+.scroll-bar::-webkit-scrollbar:horizontal {
+	height: 11px;
+}
+
+/*////////////////////////////
+===== 出錯視窗 - No-Result =====
+////////////////////////////*/
+.no-result-section {
+	text-align: center;
+}
+.no-result-section .no-result-emoji {
+	font: 200px/1.25 Google Sans, Helvetica Neue, sans-serif;
+	margin-bottom: 48px;
+	color: rgba(0, 0, 0, 0.5);
+}
+.no-result-section .title {
+	color: rgba(0, 0, 0, 0.5);
+}
+.no-result-section .subtitle {
+	color: rgba(0, 0, 0, 0.5);
+}

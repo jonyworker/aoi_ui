@@ -1,0 +1,12 @@
+
+.video-box {
+  width: 100%;
+  aspect-ratio: 560/315;
+  position: relative;
+}
+.video-box iframe {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+

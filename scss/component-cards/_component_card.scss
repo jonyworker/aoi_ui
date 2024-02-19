@@ -1,0 +1,339 @@
+
+
+/*/////////////////////////////
+===== Card - 基礎設定 START =====
+/////////////////////////////*/
+.card {
+  min-width: 0;
+  height: 100%;
+  word-wrap: break-word;
+  background-color: #fff;
+  // background-clip: border-box;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.14),
+    0px 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0px 1px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  // padding: 20px;
+}
+// .card.card-input {
+//   padding: 20px 0;
+// }
+
+.card.card-row {
+  display: flex;
+  align-items: center;
+}
+
+.card.card-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/*----------------------------------------------
+----- Card head & body & footer 容器基礎設定 -----
+----------------------------------------------*/
+/*----- card-head -----*/
+.card .card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $color-grey-40;
+  position: relative;
+}
+/*----- card-body -----*/
+.card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.card .card-body-fluid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+/*----- card-footer -----*/
+.card .card-footer {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-top: 1px solid $color-grey-40;
+}
+
+
+
+/*////////////////////////////
+===== 卡片 - Head setting =====
+////////////////////////////*/
+/*----- card-head / title-set 流向-----*/
+.card .title-set-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card .title-set-col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/*----- card-head / title-set / Title設定-----*/
+.card .card-head .title-set-row h2,
+.card .card-head .title-set-col h2 {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: $text-color-87;
+}
+
+.card .card-head .title-set-row h2 span,
+.card .card-head .title-set-col h2 span {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: $text-color-87;
+}
+/*----- card-head / title-set /SubTitle設定-----*/
+.card .card-head .title-set-row small,
+.card .card-head .title-set-col small {
+  font-size: 12px;
+  line-height: 1.33;
+  font-weight: 400;
+  color: $text-color-38;
+  // margin-left: 8px;
+}
+
+
+/*////////////////////////////
+===== 卡片 - body setting =====
+////////////////////////////*/
+/*----- card-body / 文字設定 -----*/
+.card .card-body small {
+  font-size: 12px;
+  line-height: 1.33;
+  font-weight: 400;
+  color: $text-color-38;
+  margin-bottom: auto;
+}
+
+.card .card-body p {
+  font-size: 40px;
+  line-height: 1.3;
+  font-weight: 500;
+  color: $text-color-87;
+  color: red;
+}
+
+/*/////////////////////////////////////
+===== 卡片 - footer detail setting =====
+/////////////////////////////////////*/
+.card .card-footer p,
+.card .card-footer p time {
+  font-size: 12px;
+  line-height: 1.33;
+  font-weight: 400;
+  color: $text-color-38;
+}
+
+
+/*////////////////////////////////////////
+===== 卡片 - 資料建立表單基礎設定 setting =====
+////////////////////////////////////////*/
+
+/*-------------------------------------------
+----- 表格設定 Form Setting (在.card同一層)-----
+-------------------------------------------*/
+
+/*----- table 標題 (顯示用，不是th) -----*/ 
+.style-tableList .table-title {
+  display: flex;
+  border-collapse: collapse;
+  padding: 0 20px;
+  border-bottom: 1px solid $color-grey-40;
+}
+
+.style-tableList .table-title p {
+  padding: 8px 0;
+  text-align: start;
+  font-size: 14px;
+  line-height: 1.43;
+  font-weight: 600;
+  width: 14.28571%;
+  text-align: left;
+}
+
+.style-tableList .table-title p span {
+  font-size: 12px;
+  line-height: 1.33;
+  color: $text-color-secondary;
+}
+
+/*----- table-list 內容捲動設定 -----*/
+.style-tableList .scroll-wrap {
+  overflow-y: scroll;
+  overflow-y: overlay;
+  display: flex;
+  align-items: start;
+  flex: 1 1 500px;
+  // display: flex;
+  // scrollbar-gutter: stable;
+}
+/*----- table-list -----*/
+.style-tableList .table-list {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+/*----- table-list table row 資料列樣式 -----*/
+.style-tableList .table-list tr {
+  border-bottom: 1px dashed $color-grey-40;
+}
+
+.style-tableList .table-list tr:hover {
+  background-color: $color-grey-20;
+}
+
+/*----- table-list table-data內容 -----*/
+.style-tableList .table-list tr td {
+  display: table-cell;
+  padding: 12px 0;
+  padding-left: 0;
+  text-align: start;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  width: 14.28571%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: middle;
+  // display: -webkit-box;
+  white-space: nowrap;
+  position: relative;
+}
+
+/*----- table-list table row 資料列選取後樣式 -----*/
+.style-tableList .table-list tr.active td:first-of-type::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 5px;
+  background-color: $color-primary-default;
+}
+/*----- table-list / table-data / 設定空白td寬度 -----*/
+.style-tableList .table-list .empty-td {
+  width: 20px;
+}
+
+
+/*------------------------------
+-----  Form Setting (Badge)-----
+------------------------------*/
+
+/*----- table-list badge -----*/
+.style-tableList .table-list .badge {
+  width: fit-content;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.style-tableList .table-list .badge.badge-outline {
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+
+.style-tableList .badge.badge-status div {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+}
+.style-tableList .badge.badge-status.danger {
+  color: $color-danger-default;
+}
+.style-tableList .badge.badge-status.danger div {
+  background-color: $color-danger-default;
+}
+.style-tableList .badge.badge-status.success {
+  color: $color-success-default;
+}
+.style-tableList .badge.badge-status.success div {
+  background-color: $color-success-default;
+}
+.style-tableList .badge.no-data {
+  color: $color-grey-50;
+}
+.style-tableList .badge.nod-ata div {
+  display: none;
+}
+// .style-tableList .badge.badge-status.success div {
+//   background-color: $color-success-default;
+// }
+// .style-tableList .badge.badge-status.no-data div {
+//   background-color: $color-grey-50;
+// }
+// .style-tableList .table-list .badge.danger small {
+  
+//   color: $color-danger-default;
+// }
+
+
+/*-------------------------------------------
+-----  Form Setting (在.card同一層)-----
+-------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----- card-body / 圖表 -----*/
+.card .card-body .chart-wrap {
+  // position: relative;
+  width: 100%;
+  height: 100%;
+  // overflow: hidden;
+}
+
+#chart-receivable canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+

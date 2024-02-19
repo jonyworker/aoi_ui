@@ -1,0 +1,71 @@
+/*////////////////////////////////////
+===== Product-Info Section START =====
+////////////////////////////////////*/
+
+/*----- ProductInfo 容器 -----*/
+.infoBar-section{
+  width: 100%;
+  padding: 32px 24px 32px;
+  background-color: #fff;
+  border-bottom: 1px solid $color-border;
+}
+.infoBar-content {
+  // padding-top: 72px;
+  display: flex;
+  align-items: center;
+}
+.infoBar-content h2 {
+  font-size: 32px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: $text-color-87;
+}
+.infoBar-content .infoBar-list {
+  display: flex;
+  gap: 24px;
+}
+.infoBar-content .infoBar-list li * {
+  color: $text-color-60;
+}
+
+/*----- infoBar 按鈕 -----*/
+.infoBar.btn-back {
+  // display: flex;
+  // align-items: center;
+  display: block;
+  position: relative;
+  margin-left: 4px;
+}
+.infoBar.btn-back::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border: 2px solid $color-primary-default;
+  border-width: 0 0 2px 2px;
+  transform: rotate(45deg);
+}
+.infoBar.btn-back::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 2px;
+  background-color: $color-primary-default;
+  transition: width 0.1s;
+}
+.infoBar:hover.btn-back::after {
+  width: 20px;
+}
+.infoBar.btn-back p {
+  color: $color-primary-default;
+  margin-left: 48px;
+  transition: all 0.2s;
+}
+.infoBar:hover.btn-back p {
+  margin-left: 28px;
+}

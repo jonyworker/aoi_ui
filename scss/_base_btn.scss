@@ -1,0 +1,127 @@
+/*///////////////////////
+===== 按鈕 (全域設定) =====
+//////////////////////*/
+/*----- 按鈕 基礎設定 -----*/
+.btn {
+  background-color: $color-grey-20;
+  border: 2px solid $color-primary-default;
+  border-radius: 100px;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  color: $color-primary-default;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+.btn.btn-fill {
+  background-color: $color-primary-default;
+  border: 2px solid $color-primary-default;
+  color: $text-color-0;
+}
+.btn.btn-outline {
+  background-color: $color-primary-light;
+  border: 2px solid $color-primary-default;
+  color: $color-primary-default;
+}
+
+
+/*----- 按鈕 包含 icon -----*/
+.btn.btn-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn.btn-with-icon span {
+  font-size: 20px;
+}
+.btn.btn-with-icon span,
+.btn.btn-with-icon p {
+  color: $color-primary-default;
+  transition: all 0.2s;
+}
+/*----- 按鈕 三種大小設定 -----*/
+.btn.btn-xlg {
+  padding: 12px 50px;
+  font-size: 16px;
+}
+
+.btn.btn-lg {
+  padding: 8px 20px;
+}
+
+.btn.btn-middle {
+  padding: 8px 20px;
+}
+
+.btn.btn-small {
+  padding: 4px 20px;
+}
+/*----- 按鈕 互動樣式 -----*/
+.btn:hover {
+  box-shadow: 0px 0px 0px 4px rgba(14, 165, 233, 0.2);
+  // border-color: $color-primary-default;
+}
+.btn:active  {
+  box-shadow: 0px 0px 0px 4px rgba(14, 165, 233, 0);
+  background-color: $color-primary-default;
+  color: $text-color-0;
+}
+.btn:active.btn-with-icon span,
+.btn:active.btn-with-icon p {
+  color: $text-color-0;
+}
+/*----- 按鈕 只有icon 例：編輯、刪除 -----*/
+.btn-icon {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.btn-icon span {
+  color: $text-color-38;
+}
+.btn-icon:hover > span {
+  color: $text-color-87;
+}
+
+
+/*----- 按鈕 只有icon 用作download 使用 -----*/
+.btn-icon.btn-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-icon.btn-header span {
+  color: $text-color-87;
+}
+
+/*----- 按鈕 只有icon 用作download 使用 -----*/
+.btn-icon.download {
+  padding: 6px;
+  border: 2px solid $color-grey-50;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-icon.download:hover {
+  border: 2px solid $color-primary-default;
+}
+.btn-icon.download:hover > span {
+  color: $color-primary-default;
+}
+.btn-icon.download:active {
+  border: 2px solid $color-primary-default;
+}
+
+.btn-icon.download:active span {
+  color: $text-color-0;
+}
+
+
+
+
+
+
+
+

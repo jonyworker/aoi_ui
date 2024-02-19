@@ -1,0 +1,287 @@
+/*////////////////////////////////
+===== Card - TableList START =====
+////////////////////////////////*/
+.card-tableList {
+  min-width: 0;
+  height: 100%;
+  word-wrap: break-word;
+  background-color: #fff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.14),
+              0px 3px 1px -2px rgba(0, 0, 0, 0.12),
+              0px 1px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  padding: 20px 0;
+}
+.card-tableList.card-row {
+  display: flex;
+  align-items: center;
+}
+.card-tableList.card-column {
+  display: flex;
+  flex-direction: column;
+}
+/*----- card-head -----*/
+.card-tableList .card-head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 0 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $color-grey-40;
+}
+/*----- card-body -----*/
+.card-tableList .card-body {
+  flex:1;
+  display: flex;
+  flex-direction: column;
+}
+/*----- card-footer -----*/
+.card-footer {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  padding-bottom: 0;
+  border-top: 1px solid $color-grey-40;
+}
+.card-footer p,
+.card-footer p time {
+  font-size: 12px;
+  line-height: 1.33;
+  font-weight: 400;
+  color: $text-color-tertiary;
+}
+
+
+/*///////////////////////
+===== 大標題 setting =====
+///////////////////////*/
+/*----- card-head title-set -----*/
+.card-tableList .card-head .title-set {
+  display: flex;
+  align-items: center;
+}
+.card-tableList .card-head .title-set h2 {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: $text-color-primary;
+}
+.card-tableList .card-head .title-set h2 span {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: $color-primary-default;
+}
+.card-tableList .card-head .title-set small {
+  font-size: 12px;
+  line-height: 1.33;
+  font-weight: 400;
+  color: $text-color-tertiary;
+  margin-left: 8px;
+}
+
+/*///////////////////////
+===== 篩選列 setting =====
+///////////////////////*/
+/*----- card-head FORM -----*/
+.card-tableList .card-head form {
+  width: 100%;
+  gap: 16px;
+  display: flex;
+}
+.card-tableList .card-head .filter-list {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+}
+.card-tableList .card-head .filter-item,
+.card-tableList .card-head .input-item {
+  width: 100%;
+}
+.card-tableList .card-head .filter-item {
+  position: relative;
+}
+.card-tableList .card-head form .select-wrap::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-image: url(../../image/icon_expand_more.svg);
+  background-size: contain;
+  z-index: 1;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.card-tableList .card-head form select,
+.card-tableList .card-head form input[type=text] {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: #fff;
+  border: 2px solid $color-grey-50;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $color-grey-50;
+  transition: .1s;
+  appearance: none;
+}
+.card-tableList .card-head form input[type=text]::placeholder {
+  color: $color-grey-50;
+}
+
+
+/*/////////////////////
+===== 表格 setting =====
+/////////////////////*/
+/*----- table 標題 (顯示用，不是th) -----*/
+.card-tableList .table-title {
+  display: flex;
+  border-collapse: collapse;
+  padding: 0 20px;
+  border-bottom: 1px solid $color-grey-40;
+}
+.card-tableList .table-title p {
+  padding: 8px 0;
+  text-align: start;
+  font-size: 14px;
+  line-height: 1.43;
+  font-weight: 600;
+  width: 14.28571%;
+  text-align: left;
+}
+.card-tableList .table-title p span {
+  font-size: 12px;
+  line-height: 1.33;
+  color: $text-color-secondary;
+}
+
+/*----- table 內容捲動設定 -----*/
+.card-tableList .scroll-wrap {
+  display: flex;
+  flex:1;
+  // height: calc(100vh - 500px);
+  // overflow-y: scroll;
+  //讓scroll bar浮於內容之上(在flex上沒作用)
+  // overflow-y: overlay;
+  // 以下是新作法 
+  // position: relative;
+}
+// .card-tableList .scroll-wrap::after {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   width: 10px; /* 滾動條寬度 */
+//   background-color: #ccc; /* 滾動條顏色 */
+//   border-radius: 5px; /* 滾動條圓角 */
+//   opacity: 0; /* 初始時隱藏滾動條 */
+//   transition: opacity 0.3s ease; /* 動畫效果 */
+// }
+// .card-tableList:hover .scroll-wrap::after {
+//   opacity: 1;
+// }
+.card-tableList .scroll-wrap.setting-section {
+  flex:1 1 600px;
+}
+.card-tableList .scroll-wrap.setting-crop,
+.card-tableList .scroll-wrap.setting-product,
+.card-tableList .scroll-wrap.setting-customer,
+.card-tableList .scroll-wrap.setting-staff {
+  flex:1 1 456px;
+}
+
+
+/*----- table-list -----*/
+.card-tableList .table-list {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+/*----- table-list table row -----*/
+.card-tableList .table-list tr {
+  border-bottom: 1px dashed $color-grey-40;
+}
+.card-tableList .table-list tr:hover {
+  background-color: $color-grey-20;
+}
+
+/*----- table-list 內容 -----*/
+.card-tableList .table-list tr td {
+  display: table-cell;
+  padding: 16px 0;
+  padding-left:  0;
+  text-align: start;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  width: 14.28571%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  // display: -webkit-box;
+  white-space: nowrap;
+  position: relative;
+}
+.card-tableList .table-list  tr.active td:first-of-type::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 5px;
+  background-color: $color-primary-default;
+}
+.card-tableList .table-list .empty-td {
+  width: 20px;
+}
+
+
+
+/*/////////////////////
+===== 按鈕 setting =====
+/////////////////////*/
+
+/*----- 篩選 按鈕 -----*/
+.card-tableList .card-head form button {
+  border: 0;
+  padding: 8px 50px;
+  background-color: $color-primary-light;
+  border: 2px solid $color-primary-default;
+  border-radius: 100px;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  color: $color-primary-default;
+  cursor: pointer;
+}
+.card-tableList .card-head form button:active {
+  background-color: $color-primary-default;
+  color: $color-white;
+}
+
+/*----- table-list 編輯 按鈕 -----*/
+.card-tableList .card-body .table-list button {
+  box-sizing: border-box;
+  border: none;
+  padding: 4px 20px;
+  background-color: $color-grey-30;
+  border: 2px solid $color-grey-30;
+  border-radius: 100px;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  color: $color-white;
+  cursor: pointer;
+}
+.card-tableList .card-body .table-list tr.active button {
+  background-color: $color-primary-light;
+  border: 2px solid $color-primary-default;
+  color: $color-primary-default;
+}
+.card-tableList .card-body .table-list tr.active button:active {
+  background-color: $color-primary-default;
+  color: $color-white;
+}

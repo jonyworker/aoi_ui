@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新漢AOI&AI中介系統(Component detail)</title>
+  <!-- css link -->
+  <link rel="stylesheet" href="../css/all.css">
+  <!-- google font -->
+  <!-- Noto Sans TC 繁體中文 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Material icon (out-line) -->
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"
+    rel="stylesheet">
+  <!-- Material icon (symbols) -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+  
+  
+</head>
+
+<body>
+
+  <!-- TOP-BAR Section -->
+  <header class="header-section">
+    <div class="container-slef ">
+      <div class="header-content">
+
+        <!-- logo-set -->
+        <a class="logo-set" href="./index.html" alt="click to main page" title="Visit the main page">
+          <h1>
+            <img src="./image/GS Logo.svg" alt="logo">
+          </h1>
+          <p class="">新漢AOI&AI中介系統</p>
+        </a>
+
+        <!-- tool-bar -->
+        <ul class="toolbar-list">
+          <!-- 1st  -->
+          <li class="toolbar-item">
+            <a href="#">
+              <div class="avatar-wrap">
+                <img src="./image/Person Photo 14.png" alt="">
+              </div>
+            </a>
+          </li>
+          <!-- 2nd  -->
+          <li class="toolbar-item">
+            <a href="#">
+              <div class="icon-wrap">
+                <span class="material-icons-outlined">
+                  settings
+                </span>
+              </div>
+            </a>
+          </li>
+          <!-- 3rd  -->
+          <li class="toolbar-item">
+            <a href="#">
+              <div class="icon-wrap">
+                <span class="material-icons-outlined">
+                  help_outline
+                </span>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </header>
+
+  <main class="d-flex">
+    <!-- Side-BAR-MENU Section -->
+    <section class="main-nav-section">
+      <div class="container-self">
+        <div class="main-nav-content">
+          <nav class="main-nav">
+            <ul>
+
+              <!-- 情報平台 -->
+              <!-- 被選擇時加上 active -->
+              <li class="active">
+                <a href="./index.html">
+                  <span class="material-icons-outlined">
+                    dashboard
+                  </span>
+                  情報平台
+                </a>
+              </li>
+              <!-- 權限管理 -->
+              <li>
+                <a href="./html/page_setting/setting_greenhouse.html">
+                  <span class="material-symbols-outlined">
+                    badge
+                  </span>
+                  權限管理
+                </a>
+              </li>
+              <!-- 模型資訊 -->
+              <li>
+                <a href="./html/page_setting/setting_greenhouse.html">
+                  <span class="material-symbols-outlined">
+                    memory
+                  </span>
+                  模型資訊
+                </a>
+              </li>
+
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 每頁變動區塊 -->
+    <div class="main-info-section">
+
+      <!-- InfoBar Section 資訊記載區塊-->
+      <section class="infoBar-section">
+        <div class="infoBar-content">
+          <div>
+            <a href="#" class="infoBar btn-back mb-16">
+              <p>返回機板 NEAAMDA0201-0003222370776_B 總覽</p>
+            </a>
+      
+            <h2 class="title mb-4">C288-1</h2>
+            <ul class="infoBar-list">
+              <li>
+                <p>元件料號：<span>4CC101B501X00</span></p>
+              </li>
+              <li>
+                <p>正反面：<span>反面</span></p>
+              </li>
+              <li>
+                <p>不良原因：<span>S02</span></p>
+              </li>
+              <li>
+                <p>原因分析：<span>SMT-短路</span></p>
+              </li>
+              <li>
+                <p>測試者：<span>F0316</span></p>
+              </li>
+              <li>
+                <p>修理者：<span>F0736</span></p>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main-Board Section 動態更動(可捲動) -->
+      <section class="main-board-section scroll-bar" >
+        <div class="main-board-content">
+          <div class="container-fluid">
+            
+            <!-- ## 不良位置照片及3站判讀結果 -->
+            <div class="row">
+              <!-- # 不良元件圖片 -->
+              <div class="col-9">
+                <div class="row h-100">
+                  <div class="col-12">
+                    <div class="card style-tableList card-column">
+                      <!-- card-head -->
+                      <div class="card-head">
+                        <div class="title-set-row">
+                          <h2>不良元件快照</h2>
+                          <small>顯示各位置判讀依據及結果</small>
+                        </div>
+                      </div>
+
+                      <!-- card-body 卡片表格 -->
+                      <div class="card-body-fluid nex-comp"  >
+                        <div id="carouselExampleIndicators" class="carousel slide">
+                          <!-- 指示器 -->
+                          <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                              aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                              aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                              aria-label="Slide 3"></button>
+                          </div>
+                          <!-- 輪播項目 -->
+                          <div class="carousel-inner" style="height: 460px; ">
+                            <div class="carousel-item active">
+                              <img src="../image/U70_1_LowAngleLight.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                              <img src="../image/U70_1_SolderLight.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                              <img src="../image/DIMM2_1_SolderLight.jpg" class="d-block w-100" alt="...">
+                            </div>
+                          </div>
+                          <!-- 上下按鈕 -->
+                          <!-- Previous -->
+                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" style="left: -8%;">
+                            <span class="material-symbols-outlined" style="font-size: 36px; color:#212121;">
+                              arrow_back_ios_new
+                            </span>
+                          </button>
+                          <!-- Next -->
+                          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next" style="right: -8%;">
+                            <span class="material-symbols-outlined" style="font-size: 36px; color:#212121;">
+                              arrow_forward_ios
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                      
+                      <!-- card-footer 新增及最後修改時間 -->
+                      <div class="card-footer">
+                        <p>新增時間&nbsp;<time datetime="2022-04-16">111/4/16</time>&nbsp;<time datetime="12:26">12:26</time></p>
+                        <p>最後修改&nbsp;<time datetime="2022-04-20">111/4/20</time>&nbsp;<time datetime="13:26">13:26</time></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- # 每次不良機板檢測NG元件列表 -->
+              <div class="col-3">
+                <div class="d-flex flex-column">
+                  <!-- AOI 判讀結果 -->
+                  <div class="col mb-24">
+                    <div class="card-with-icon card-row result-reject">
+                      <!-- card-icon -->
+                      <div class="card-icon">
+                        <span class="material-symbols-outlined">
+                          flip
+                        </span>
+                      </div>
+                      <!-- card-info -->
+                      <div class="card-info">
+                        <!-- card-head -->
+                        <div class="card-head">
+                          <h2>AOI 判讀結果</h2>
+                        </div>
+                        <!-- card-body -->
+                        <div class="card-body">
+                          <small>本元件 AOI 機台中的檢測結果</small>
+                          <p class="">REJECT</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- AI 判讀結果 -->
+                  <div class="col mb-24">
+                    <div class="card-with-icon card-row result-pass">
+                      <!-- card-icon -->
+                      <div class="card-icon">
+                        <span class="material-symbols-outlined">
+                          point_scan
+                        </span>
+                      </div>
+                      <!-- card-info -->
+                      <div class="card-info">
+                        <!-- card-head -->
+                        <div class="card-head">
+                          <h2>AI 判讀結果</h2>
+                        </div>
+                        <!-- card-body -->
+                        <div class="card-body">
+                          <small>本元件 AI 的檢測結果</small>
+                          <p class="">PASS</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- OP 判讀結果 -->
+                  <div class="col">
+                    <div class="card-with-icon card-row result-pass">
+                      <!-- card-icon -->
+                      <div class="card-icon">
+                        <span class="material-symbols-outlined">
+                          face
+                        </span>
+                      </div>
+                      <!-- card-info -->
+                      <div class="card-info">
+                        <!-- card-head -->
+                        <div class="card-head">
+                          <h2>OP 判讀結果</h2>
+                        </div>
+                        <!-- card-body -->
+                        <div class="card-body">
+                          <small>本元件 OP 人工檢測結果</small>
+                          <p class="">PASS</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+
+            
+
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- 外部工具 -->
+  <script src="../js/vendors-popper.js"></script>
+  <script src="../js/vendors-bootstrap.min.js"></script>
+</body>
+
+</html>

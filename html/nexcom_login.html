@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新漢AOI&AI中介系統(登入頁面)</title>
+  <!-- css link -->
+  <link rel="stylesheet" href="../css/all.css">
+  <!-- google font -->
+  <!-- Noto Sans TC 繁體中文 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Material icon (out-line) -->
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"
+    rel="stylesheet">
+  <!-- Material icon (symbols) -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+  <!-- Vue.js 2 cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+  <!-- axios cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <!-- 外部工具 simplebar -->
+  <script src="../js/vendors-simplebar.js"></script>
+  <noscript>
+    <style>
+      /**
+      * Reinstate scrolling for non-JS clients
+      */
+      .simplebar-content-wrapper {
+        scrollbar-width: auto;
+        -ms-overflow-style: auto;
+      }
+
+      .simplebar-content-wrapper::-webkit-scrollbar,
+      .simplebar-hide-scrollbar::-webkit-scrollbar {
+        display: initial;
+        width: initial;
+        height: initial;
+      }
+    </style>
+  </noscript>
+
+</head>
+
+<body>
+  <div id="app">
+    <section class="addNewUser popup-section d-block">
+      <div class="popup-overlay">
+        <div class="popup-content card card-input card-column w-25">
+          <!-- card-head -->
+          <div class="card-head">
+            <div class="title-set-col">
+              <h2 class="title">登入</h2>
+              <small>嗨！歡迎回來～ 請輸入您的帳號和密碼</small>
+              <!-- 登出訊息 -->
+              <p v-if="isLogout" style="font-size: 16px; color: red; font-weight: bold;">已成功登出!</p>
+            </div>
+          </div>
+          <!-- card-body -->
+          <div class="card-body">
+            <!--===========================================================================================================================-->
+            <!--==                                                    登入 Form 表單開始                                                  ==-->
+            <!--===========================================================================================================================-->
+            <form action="/login" method="post" ref="loginForm">
+              <!-- 資料建立表單 -->
+              <ul class="input-list-col">
+          
+                <!-- 使用者名稱 -->
+                <li class="input-item">
+                  <label class="sub-title" for="count-plate">使用者名稱*</label>
+                  <div class="input-wrap">
+                    <input type="text" id="count-plate" name="username" placeholder="請輸入使用者名稱" @keydown.enter.prevent
+                      @keyup.enter="submitForm">
+                  </div>
+                </li>
+          
+                <!-- 密碼 -->
+                <li class="input-item">
+                  <label class="sub-title" for="count-plate">密碼*</label>
+                  <div class="input-wrap">
+                    <input type="text" id="count-plate" name="password" placeholder="請輸入密碼" @keydown.enter.prevent
+                      @keyup.enter="submitForm">
+                  </div>
+                </li>
+          
+          
+          
+          
+                <!-- 帳密錯誤訊息-->
+                <li v-if="isBadRequest">
+                  <p style="font-size: 16px; color: red; font-weight: bold;">帳號或密碼錯誤</p>
+                </li>
+          
+                <!-- 驗證碼錯誤訊息-->
+                <li v-if="isInvalidCaptcha">
+                  <p style="font-size: 16px; color: red; font-weight: bold;">請重新輸入驗證碼</p>
+                </li>
+          
+                <!-- 輸入驗證碼 -->
+                <li class="input-item">
+                  <label class="sub-title" for="count-plate">驗證碼*</label>
+                  <div class="input-wrap">
+                    <input id="captcha" name="captcha" type="text" placeholder="請輸入驗證碼" @keydown.enter.prevent
+                      @keyup.enter="submitForm">
+                  </div>
+                </li>
+          
+                <!-- 圖形驗證碼圖片 -->
+                <li class="d-flex">
+                  <div class="w-100" style="background-color: black; height: 60px;">
+                    <img :src="captchaSrc" style="width:100%; height: 10px;">
+                  </div>
+                  <!-- 更換驗證碼按鈕 -->
+                  <button @click.prevent="refreshCaptcha">換一張</button>
+                </li>
+          
+                <!-- 勿忘我 -->
+                <li class="input-item flex-row">
+                  <input id="rememberMe" name="rememberMe" type="checkbox">
+                  <label class="sub-title" for="rememberMe">7天免登入</label>
+                </li>
+          
+                <!-- 登入 (按鈕) -->
+                <button class="btn btn-fill btn-xlg w-100 mt-56" type="submit">登入</button>
+          
+              </ul>
+          
+            </form>
+            <!--===========================================================================================================================-->
+            <!--==                                                    登入 Form 表單結束                                                  ==-->
+            <!--===========================================================================================================================-->
+          </div>
+    
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <script>
+
+    let vm = new Vue({
+
+      el: '#app',
+
+      data: {
+        rememberMe: false,
+        isBadRequest: null,
+        isInvalidCaptcha: null,
+        isLogout: null,
+        captchaSrc: '/captcha?' + new Date().getTime()
+      },
+
+      created() {
+
+        let params = new URLSearchParams(window.location.search);
+        this.truncateUrlParams();
+
+        switch (true) {
+
+          case params.has('captchaInvalid'):
+            this.isInvalidCaptcha = true;
+            break;
+
+          case params.has('error'):
+            this.isBadRequest = true;
+            break;
+
+          case params.has('logoutSuccess'):
+            this.isLogout = true;
+            break;
+
+          default:
+            break;
+        }
+
+      },
+
+      methods: {
+
+        refreshCaptcha() {
+          this.captchaSrc = '/captcha?' + new Date().getTime();
+        },
+
+        truncateUrlParams(){
+          window.history.replaceState({}, document.title, window.location.pathname);
+        },
+
+        submitForm(){
+          this.$refs.loginForm.submit();
+        }
+
+      }
+
+    });
+
+  </script>
+
+
+</body>
+
+</html>

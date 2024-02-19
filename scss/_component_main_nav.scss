@@ -1,0 +1,50 @@
+/*////////////////////////////////
+===== Main-Nav Section START =====
+////////////////////////////////*/
+.main-nav-section {
+  width: 256px;
+  background-color: #fff;
+  border-right: 1px solid $color-border;
+  padding-top: 72px;
+}
+.main-nav-content {
+  // padding-top: 72px;
+}
+
+/*----- main-nav 列表 -----*/
+.main-nav a {
+  display: block;
+  display: flex;
+  align-items: center;
+  gap:8px;
+  padding: 16px 24px;
+  font-size: 14px;
+  line-height: 1.42;
+  font-weight: 400;
+  color: $text-color-primary;
+}
+.main-nav li:not(.active):hover a {
+  background-color: $color-grey-20;
+}
+// 如果被選中時
+.main-nav .active a,
+.main-nav .active a span {
+  color: $color-primary-default;
+  background-color: $color-primary-light;
+}
+
+
+/*----- profile-item -----*/
+.profile-item .avatar-wrap-36 {
+  width: 36px;
+  height: 36px;
+  border-radius: 500px;
+  overflow: hidden;
+}
+.profile-item a {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: $text-color-primary;
+  padding: 15px 24px;
+}

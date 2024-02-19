@@ -1,0 +1,130 @@
+
+/*//////////////////////////
+===== 彈跳視窗 - Pop-up =====
+//////////////////////////*/
+.popup-section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  display: none;
+}
+
+
+/*----- popup-section - overlay -----*/
+.popup-section .popup-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .6);
+  backdrop-filter: blur(4px);
+  transition: 0.1s;
+}
+
+.popup-section .popup-content {
+  // width: 80%;
+  height: fit-content;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 16px;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow:
+    0px 20px 24px -4px rgba(5, 9, 18, 0.1),
+    0px 8px 8px -4px rgba(3, 8, 18, 0.04);
+}
+.popup-section .popup-content.card{
+  padding: 0px;
+}
+
+.popup-section .popup-content h4 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 125%;
+  color: $text-color-87;
+  margin-bottom: 8px;
+}
+
+.popup-section .popup-content p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 125%;
+  color: $text-color-38;
+}
+/*----- card-head / title-set /SubTitle with icon 叉叉 -----*/
+.popup-section .popup-content.card .card-head .btn-icon.btn-close {
+  position: absolute;
+  top: 16px;
+  right: 10px;
+}
+
+
+
+
+
+/*----- loader - animation -----*/
+.loader-content {
+  width: 100%;
+  height: 150px;
+  background: #fff;
+  filter: blur(10px) contrast(20);
+}
+
+.blob-1,
+.blob-2 {
+  width: 110px;
+  height: 110px;
+  position: absolute;
+  background: $color-primary-default;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.blob-1 {
+  left: 20%;
+  width: 70px;
+  height: 70px;
+  animation: osc-l 2.5s ease infinite;
+}
+
+.blob-2 {
+  left: 80%;
+  
+  animation: osc-r 2.5s ease infinite;
+  background: $color-primary-default;
+}
+
+@keyframes osc-l {
+  0% {
+    left: 20%;
+  }
+
+  50% {
+    left: 50%;
+  }
+
+  100% {
+    left: 20%;
+  }
+}
+
+@keyframes osc-r {
+  0% {
+    left: 80%;
+  }
+
+  50% {
+    left: 50%;
+  }
+
+  100% {
+    left: 80%;
+  }
+}
